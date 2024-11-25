@@ -4,6 +4,18 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="dev" class="com.dinidu.spring.Dev">
+        <!--
+                There are 2 ways to initialize the variable use property or constructor
+                        <property name="age" value="21"/> &lt;!&ndash;using property tag&ndash;&gt;-->
+        <constructor-arg index="0"
+                         value="21"/> <!--using constructor tag , That index mean the first para in the Constructor
+        If a Constructor Has 2 Paras then index = "0" value = "21"  index = "name" value = "Dinidu"
+&ndash;&gt;-->
+
+        <!--Ref Injection-->
+        <property name="laptop" ref="laptop"/> <!--Setter Injection Ref using property tag-->
+        <!--        <constructor-arg ref="laptop"/>-->
+
     </bean>
     <bean id="laptop" class="com.dinidu.spring.Laptop">
     </bean>
