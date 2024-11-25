@@ -2,11 +2,14 @@ package com.dinidu.DemoDI;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 
 @SpringBootApplication
 public class DemoDiApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoDiApplication.class, args);
+		ApplicationContext context = SpringApplication.run(DemoDiApplication.class, args);
+		Dev dev = context.getBean(Dev.class);
+		dev.writeCode();
 	}
 }
