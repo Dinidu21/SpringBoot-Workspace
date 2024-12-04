@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.time.Period;
 
 @Getter
 @Setter
@@ -31,15 +32,19 @@ public class Student {
     private LocalDate dob;
 
     @JsonProperty("age")
-    private Integer age;
+    @Transient
+        private Integer age;
 
     public Student() {
     }
 
-    public Student(String name, Integer age, LocalDate dob, String email) {
+    public Student(String name, LocalDate dob, String email) {
         this.name = name;
-        this.age = age;
         this.dob = dob;
         this.email = email;
+    }
+
+    public Integer getAge() {
+        return Period.between(this.dob,LocalDate.now()).getYears();
     }
 }
