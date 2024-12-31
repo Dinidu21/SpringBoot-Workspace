@@ -24,6 +24,5 @@ public class StudentConfig {
                     "Sachintha123@gmail.com");
 
             studentRepository.saveAll(List.of(dinidu, sachintha));
-        };
-    };
+        };}
 }

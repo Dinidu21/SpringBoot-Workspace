@@ -47,4 +47,36 @@ public class Student {
     public Integer getAge() {
         return Period.between(this.dob,LocalDate.now()).getYears();
     }
+
+    public Student setAge(Integer age) {
+        this.age = age;
+        return this;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public Student setEmail(String email) {
+        this.email = email;
+        return this;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Student setName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public Student setId(Long id) {
+        this.id = id;
+        return this;
+    }
 }
